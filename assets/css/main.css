@@ -1689,3 +1689,19 @@ input, select, textarea {
 .insta-icon:hover img {
 	transform: scale(1.1);
 }
+.corner-logo {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+	margin: 0;
+	padding: 0;
+}
+
+	.corner-logo img {
+		height: 100px;
+		width: auto;
+		display: block;
+		margin: 0;
+		padding: 0;
+	}
