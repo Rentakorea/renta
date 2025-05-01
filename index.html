@@ -1,157 +1,247 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	<title>Renta – Student Housing Help</title>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<link rel="stylesheet" href="assets/css/main.css" />
-	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <title>Renta – Student Housing Help</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+   /* === RADIO KNAPPAR === */
+.radio-group {
+  display: flex;
+  flex-direction: row; /* ← byter från kolumn till rad */
+  gap: 2rem; /* avstånd mellan knapparna */
+  margin-top: 1rem;
+  align-items: center;
+  flex-wrap: wrap; /* om du vill att de ska brytas på små skärmar */
+}
 
+.radio-group label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  letter-spacing: 0.15rem;
+  text-transform: uppercase;
+}
+
+/* Själva radio-knappen */
+.radio-group input[type="radio"] {
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  background-color: transparent !important;
+  border: 2px solid white !important;
+  width: 18px !important;
+  height: 18px !important;
+  border-radius: 50% !important;
+  position: relative !important;
+  cursor: pointer !important;
+  opacity: 1 !important;
+  z-index: auto !important;
+  display: inline-block !important;
+  margin-right: 10px;
+}
+
+
+/* När den är iklickad: visa en vit prick i mitten */
+.radio-group input[type="radio"]:checked::before {
+  content: "" !important;
+  position: absolute !important;
+  width: 10px !important;
+  height: 10px !important;
+  background-color: white !important;
+  border-radius: 50% !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+}
+
+/* Fokuseffekt (t.ex. vid tab + enter) */
+.radio-group input[type="radio"]:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.4);
+}
+
+  </style>
 </head>
 <body class="is-preload">
-	<div id="cornerLogo" class="corner-logo">
+  <div id="cornerLogo" class="corner-logo">
+    <img src="images/rentalogo.png" alt="Renta Logo" />
+  </div>
 
-  <img src="images/rentalogo.png" alt="Renta Logo" />
+  <div id="wrapper">
+    <header id="header">
+      <div class="logo">
+        <span class="fas fa-graduation-cap"></span>
+      </div>
+      <div class="content">
+        <div class="inner">
+          <h1>Renta</h1>
+          <p>Helping international students find safe and affordable housing in Korea</p>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#intro">The renta project</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div id="main">
+      <article id="intro">
+        <h2 class="major">Welcome to Renta</h2>
+        <span class="image main"><img src="images/intro.jpg" alt="students in Korea" /></span>
+        <p>The Renta Project was created to make student housing more accessible for international students moving to Korea. Whether you're here for an exchange, full degree, or short program – we're here to guide and support you every step of the way.</p>
+        <p>Click "Contact" to get in touch, and we'll help you find a place that fits your needs.</p>
+      </article>
+
+      <article id="about">
+        <h2 class="major">About Us</h2>
+        <span class="image main"><img src="images/aboutus.jpg" alt="apartment buildings" /></span>
+        <p>Renta was founded by Chaeyeon Lee, a student at INHA University in Incheon, South Korea. With first-hand experience of the challenges international students face when navigating the Korean housing market, she recognized the need for a more transparent and supportive approach.</p>
+        <p>Renta is committed to simplifying the rental process by providing clear guidance, trustworthy resources, and localized support. Whether you're moving to Seoul, Incheon, or elsewhere in Korea, our mission is to help you feel secure, informed, and confident from day one.</p>
+      </article>
+
+      <article id="contact">
+        <h2 class="major">Contact Us</h2>
+        <p>Please complete the form below with accurate and detailed information to help us better understand your housing needs.</p>
+
+        <form method="POST" action="https://usebasin.com/f/288426976765">
+          <div class="fields">
+            <div class="field">
+              <label for="first-name">First Name*</label>
+              <input type="text" name="first-name" id="first-name" placeholder="e.g. Emma" required />
+            </div>
+
+            <div class="field">
+              <label for="middle-name">Middle Name</label>
+              <input type="text" name="middle-name" id="middle-name" placeholder="(optional)" />
+            </div>
+
+            <div class="field">
+              <label for="last-name">Last Name*</label>
+              <input type="text" name="last-name" id="last-name" placeholder="e.g. Kim" required />
+            </div>
+
+            <div class="field">
+              <label for="email">E-mail Address*</label>
+              <input type="email" name="email" id="email" placeholder="e.g. emma.kim@example.com" required />
+            </div>
+
+            <div class="field">
+              <label for="birth-date">Birth Date*</label>
+              <input type="date" name="birth-date" id="birth-date" required />
+            </div>
+
+            <div class="field">
+              <label for="country">Country*</label>
+              <input type="text" name="country" id="country" placeholder="e.g. Sweden" required />
+            </div>
+
+            <div class="field half">
+              <label for="check-in">Check In Date*</label>
+              <input type="date" name="check-in" id="check-in" required />
+            </div>
+
+            <div class="field half">
+              <label for="check-out">Check Out Date*</label>
+              <input type="date" name="check-out" id="check-out" required />
+            </div>
+
+            <div class="field half">
+              <label for="deposit-min">Deposit Range (KRW)*</label>
+              <input type="number" name="deposit-min" id="deposit-min" placeholder="Minimum" min="0" required />
+            </div>
+
+            <div class="field half">
+              <label for="deposit-max">&nbsp;</label>
+              <input type="number" name="deposit-max" id="deposit-max" placeholder="Maximum" min="0" required />
+            </div>
+
+            <div class="field half">
+              <label for="rent-min">Rent Range (KRW)*</label>
+              <input type="number" name="rent-min" id="rent-min" placeholder="Minimum" min="0" required />
+            </div>
+
+            <div class="field half">
+              <label for="rent-max">&nbsp;</label>
+              <input type="number" name="rent-max" id="rent-max" placeholder="Maximum" min="0" required />
+            </div>
+
+           <div class="field">
+  <label>[Consent to Collect and Use Personal Information]</label>
+  <p style="font-size: 0.9em;">
+    • <strong>Information Collected:</strong> name, email address<br>
+    • <strong>Purpose:</strong> account registration, support, housing matching<br>
+    • <strong>Retention Period:</strong> until deletion or as required by law<br>
+    • <strong>Right to Refuse:</strong> You may refuse consent, but access may be limited.
+  </p>
+
+ <div class="radio-group">
+  <label>
+    <input type="radio" name="consent" value="Agree" required />
+    Agree
+  </label>
+  <label>
+    <input type="radio" name="consent" value="Disagree" required />
+    Disagree
+  </label>
 </div>
-	<!-- Wrapper -->
-	<div id="wrapper">
+</div>
+          </div>
 
-		<!-- Header -->
-		<header id="header">
-			<div class="logo">
-				<span class="fas fa-graduation-cap"></span>   <!-- för studenter -->
-			</div>
-			<div class="content">
-				<div class="inner">
-					<h1>Renta</h1>
-					<p>Helping international students find safe and affordable housing in Korea</p>
-				</div>
-			</div>
-			<nav>
-				<ul>
-					<li><a href="#intro">The renta project</a></li>
-					<li><a href="#about">About</a></li>
-					<li><a href="#contact">Contact</a></li>
-				</ul>
-			</nav>
-		</header>
+          <ul class="actions">
+            <li><input type="submit" value="Register" class="primary" /></li>
+            <li><input type="reset" value="Cancel" /></li>
+          </ul>
 
-		<!-- Main -->
-		<div id="main">
+        </form>
 
-			<!-- Intro -->
-			<article id="intro">
-				<h2 class="major">Welcome to Renta</h2>
-				<span class="image main"><img src="images/intro.jpg" alt="students in Korea" /></span>
-				<p>The Renta Project was created with the goal of making student housing more accessible and transparent for international students coming to Korea. Whether you're here for a full degree, exchange, or a short program – we understand how difficult it can be to navigate the housing market, and we're here to help.</p>
-				<p>Please click the "Contact" button to get in touch with us</p>
-			</article>
+        <ul class="icons">
+          <li><a href="https://www.instagram.com/DITT_ANVÄNDARNAMN" target="_blank" class="insta-icon"><img src="images/instagram.png" alt="Instagram" /></a></li>
+          <li><a href="https://open.kakao.com/o/YOURLINK" target="_blank" class="kakao-icon"><img src="images/kakao.png" alt="KakaoTalk" /></a></li>
+          <li><a href="https://wa.me/YOUR_NUMBER_HERE" target="_blank" class="whatsapp-icon"><img src="images/whatsapp.png" alt="WhatsApp" /></a></li>
+        </ul>
+      </article>
+    </div>
 
-			<!-- About -->
-			<article id="about">
-				<h2 class="major">About Us</h2>
-				<span class="image main"><img src="images/aboutus.jpg" alt="apartment buildings" /></span>
-				<p>Renta was founded by Chaeyeon Lee, a student at INHA University in Incheon, South Korea. With first-hand experience of the challenges international students face when navigating the Korean housing market, she recognized the need for a more transparent and supportive approach.</p>
-				<p>
-					Renta is committed to simplifying the rental process by providing clear guidance, trustworthy resources, and localized support. Whether you're moving to Seoul, Incheon, or elsewhere in Korea, our mission is to help you feel secure, informed, and confident from day one.
+    <footer id="footer">
+      <p class="copyright">© 2025 Renta. Design adapted from <a href="https://html5up.net">HTML5 UP</a>.</p>
+    </footer>
+  </div>
 
-				</p>
-			</article>
+  <div id="bg"></div>
 
-			<!-- Contact -->
-			<article id="contact">
-				<h2 class="major">Contact Us</h2>
-				<p>Please provide your full name, email address, and a brief note about when and where you plan to arrive in Korea. This will help us better understand your needs and assist you accordingly.</p>
-				<p>Once your submission is reviewed, a member of the Renta team will get in touch with you shortly.
-
-</p>
-				<form method="POST" action="https://usebasin.com/f/288426976765">
-
-					<div class="fields">
-						<div class="field half">
-							<label for="name">Full Name (First and Last)</label>
-							<input type="text" name="name" id="name" placeholder="e.g. Emma Kim" required />
-						</div>
-						<div class="field half">
-							<label for="email">Email</label>
-							<input type="email" name="email" id="email" placeholder="you@example.com" required />
-						</div>
-						<div class="field">
-							<label for="message">Message</label>
-							<textarea name="message" id="message" rows="4"></textarea>
-						</div>
-					</div>
-					<ul class="actions">
-						<li><input type="submit" value="Send Message" class="primary" /></li>
-						<li><input type="reset" value="Reset" /></li>
-					</ul>
-				</form>
-				<ul class="icons">
-					<li>
-						<a href="https://www.instagram.com/DITT_ANVÄNDARNAMN" target="_blank" class="insta-icon">
-							<img src="images/instagram.png" alt="Instagram" />
-						</a>
-					</li>
-					<li>
-						<a href="https://open.kakao.com/o/YOURLINK" target="_blank" class="kakao-icon">
-							<img src="images/kakao.png" alt="KakaoTalk" />
-						</a>
-					</li>
-					<li>
-  <a href="https://wa.me/YOUR_NUMBER_HERE" target="_blank" class="whatsapp-icon">
-    <img src="images/whatsapp.png" alt="WhatsApp" />
-  </a>
-</li>
-				</ul>
-			</article>
-
-		</div>
-
-		<!-- Footer -->
-		<footer id="footer">
-			<p class="copyright">© 2025 Renta. Design adapted from <a href="https://html5up.net">HTML5 UP</a>.</p>
-		</footer>
-
-	</div>
-
-	<!-- Background -->
-	<div id="bg"></div>
-
-	<!-- Scripts -->
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/browser.min.js"></script>
-<script src="assets/js/breakpoints.min.js"></script>
-<script src="assets/js/util.js"></script>
-<script src="assets/js/main.js"></script>
-<script>
-    const logo = document.getElementById("cornerLogo");
-
-    function updateLogoVisibility() {
-        const isArticleOpen = document.body.classList.contains("is-article-visible");
-
-        if (isArticleOpen) {
-            logo.classList.add("hidden");
-        } else {
-            logo.classList.remove("hidden");
-        }
-    }
-
-    // Trigger direkt vid laddning
-    window.addEventListener("load", () => {
-        setTimeout(updateLogoVisibility, 300);
-    });
-
-    // Trigger varje gång en artikel visas eller stängs
-    const observer = new MutationObserver(() => {
-        setTimeout(updateLogoVisibility, 300);
-    });
-
-    observer.observe(document.body, {
-        attributes: true,
-        attributeFilter: ["class"],
-    });
-</script>
-
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+      const logo = document.getElementById("cornerLogo");
+      function updateLogoVisibility() {
+          const isArticleOpen = document.body.classList.contains("is-article-visible");
+          if (isArticleOpen) {
+              logo.classList.add("hidden");
+          } else {
+              logo.classList.remove("hidden");
+          }
+      }
+      window.addEventListener("load", () => {
+          setTimeout(updateLogoVisibility, 300);
+      });
+      const observer = new MutationObserver(() => {
+          setTimeout(updateLogoVisibility, 300);
+      });
+      observer.observe(document.body, {
+          attributes: true,
+          attributeFilter: ["class"],
+      });
+  </script>
 </body>
 </html>

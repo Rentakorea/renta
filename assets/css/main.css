@@ -1633,7 +1633,7 @@ input, select, textarea {
 		text-align: center;
 	}
 
-		#footer .copyright {
+		#footer .copyright { 
 			letter-spacing: 0.2rem;
 			font-size: 0.6rem;
 			opacity: 0.75;
@@ -1732,4 +1732,71 @@ input, select, textarea {
 
 	.whatsapp-icon:hover img {
 		transform: scale(1.1);
+	}
+/* ====== Input Fields: Text, Email, Number, Date, Textarea ====== */
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="date"],
+textarea {
+	background-color: rgba(255, 255, 255, 0.1);
+	color: #fff;
+	border: 1px solid #fff;
+	width: 100%;
+	padding: 0.75rem;
+	border-radius: 4px;
+}
+
+	input::placeholder,
+	textarea::placeholder {
+		color: rgba(255, 255, 255, 0.7);
+		opacity: 1;
+	}
+
+/* ====== Checkbox & Radio Buttons ====== */
+input[type="checkbox"],
+input[type="radio"] {
+	appearance: none;
+	-webkit-appearance: none;
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	margin-right: 10px;
+	cursor: pointer;
+	position: relative;
+	vertical-align: middle;
+	background-color: transparent;
+	border: 2px solid white;
+	border-radius: 4px;
+}
+
+/* Round style for radio buttons */
+input[type="radio"] {
+	border-radius: 50%;
+}
+
+	
+	/* Optional focus effect */
+	input[type="radio"]:focus {
+		outline: none;
+		box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.4);
+	}
+
+/* Radio Button Label Layout */
+.radio-group {
+	display: flex;
+	gap: 2rem;
+	align-items: center;
+	margin-top: 1rem;
+}
+input[type="radio"] {
+	opacity: 1 !important;
+	position: static !important;
+	left: auto !important;
+	margin-right: 10px;
+	display: inline-block;
+}
+	input[type="radio"] + span {
+		font-size: 0.9rem;
+		margin-left: 4px;
 	}
