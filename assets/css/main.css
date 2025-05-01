@@ -1705,3 +1705,11 @@ input, select, textarea {
 		margin: 0;
 		padding: 0;
 	}
+#cornerLogo {
+	transition: opacity 0.4s ease;
+}
+
+	#cornerLogo.hidden {
+		opacity: 0;
+		pointer-events: none;
+	}

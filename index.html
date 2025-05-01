@@ -10,10 +10,9 @@
 
 </head>
 <body class="is-preload">
-	<div class="corner-logo">
+	<div class="corner-logo" id="cornerLogo">
   <img src="images/rentalogo.png" alt="Renta Logo" />
 </div>
-
 	<!-- Wrapper -->
 	<div id="wrapper">
 
@@ -114,11 +113,39 @@
 	<div id="bg"></div>
 
 	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/browser.min.js"></script>
-	<script src="assets/js/breakpoints.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<script src="assets/js/main.js"></script>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+    const logo = document.getElementById("cornerLogo");
+    const main = document.getElementById("main");
 
+    function updateLogoVisibility() {
+        const isMainVisible = main.classList.contains("active");
+
+        if (isMainVisible) {
+            logo.classList.add("hidden");
+        } else {
+            logo.classList.remove("hidden");
+        }
+    }
+
+    // Kör direkt vid sidladdning
+    window.addEventListener("load", () => {
+        setTimeout(updateLogoVisibility, 300); // fördröjning för att matcha mallens animation
+    });
+
+    // Kör varje gång hash ändras
+    window.addEventListener("hashchange", () => {
+        setTimeout(updateLogoVisibility, 300);
+    });
+
+    // Kör efter klick (t.ex. på bakgrunden)
+    document.addEventListener("click", () => {
+        setTimeout(updateLogoVisibility, 300);
+    });
+</script>
 </body>
 </html>
