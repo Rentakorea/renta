@@ -1671,16 +1671,20 @@ input, select, textarea {
 	transform: scale(1.1);
 }
 
-.insta-icon img {
-	width: 48px;
-	height: 48px;
-	border-radius: 50%;
-	object-fit: cover;
-	display: block;
-	margin: 0 auto;
-	box-shadow: 0 0 0 2px white;
-	transition: transform 0.2s ease;
+.insta-icon {
+	margin-right: 12px;
 }
+
+	.insta-icon img {
+		width: 48px;
+		height: 48px;
+		border-radius: 50%;
+		object-fit: cover;
+		display: block;
+		margin: 0 auto;
+		box-shadow: 0 0 0 2px white;
+		transition: transform 0.2s ease;
+	}
 
 .insta-icon:hover img {
 	transform: scale(1.1);
