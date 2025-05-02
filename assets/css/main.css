@@ -1802,11 +1802,11 @@ input[type="radio"] {
 	}
 .image-row {
 	display: flex;
-	justify-content: space-between;
-	flex-wrap: wrap;
+	justify-content: center;
+	flex-wrap: nowrap;
 	gap: 2rem;
+	flex-direction: row;
 }
-
 .service-box {
 	flex: 1;
 	min-width: 250px;
@@ -1838,3 +1838,104 @@ input[type="radio"] {
 		width: 50px;
 		height: 50px;
 	}
+/* === SERVICE SECTION MODERNIZED === */
+.service-box-modern {
+	position: relative;
+	width: 100%;
+	max-width: 300px;
+	border-radius: 8px;
+	overflow: hidden;
+	text-align: center;
+}
+
+	.service-box-modern img {
+		width: 100%;
+		height: 250px;
+		object-fit: cover;
+		display: block;
+		filter: brightness(0.6);
+		transition: filter 0.3s ease;
+	}
+
+	.service-box-modern:hover img {
+		filter: brightness(0.8);
+	}
+
+.service-text-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	padding: 1rem;
+	text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+}
+
+	.service-text-overlay h3 {
+		font-size: 1.2rem;
+		letter-spacing: 0.1rem;
+		text-transform: uppercase;
+		margin-bottom: 0.5rem;
+	}
+
+	.service-text-overlay p {
+		font-size: 0.9rem;
+	}
+.service-box-modern {
+	position: relative;
+	flex: 1;
+	min-width: 250px;
+	height: 300px;
+	overflow: hidden;
+	border-radius: 8px;
+}
+
+	.service-box-modern img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+		filter: brightness(70%);
+		transition: transform 0.3s ease;
+	}
+
+	.service-box-modern:hover img {
+		transform: scale(1.05);
+	}
+
+.service-text-overlay {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: white;
+	text-align: center;
+	padding: 0 1rem;
+}
+
+	.service-text-overlay h3 {
+		font-size: 1.4rem;
+		margin-bottom: 0.5rem;
+		text-transform: uppercase;
+		letter-spacing: 0.1rem;
+	}
+
+	.service-text-overlay p {
+		font-size: 0.9rem;
+		line-height: 1.4;
+	}
+@media screen and (max-width: 768px) {
+	.image-row {
+		flex-wrap: wrap;
+	}
+
+	.service-box-modern {
+		flex: 1 1 100%;
+		height: 280px;
+	}
+}
