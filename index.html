@@ -1,78 +1,84 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+  <!-- ====== SIDHUVUD & METADATA ====== -->
   <title>Renta – Student Housing Help</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+  <!-- ====== STILMALLAR ====== -->
   <link rel="stylesheet" href="assets/css/main.css" />
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+  <!-- ====== INLINE STILAR FÖR RADIO-KNAPPAR ====== -->
   <style>
-   /* === RADIO KNAPPAR === */
-.radio-group {
-  display: flex;
-  flex-direction: row; /* ← byter från kolumn till rad */
-  gap: 2rem; /* avstånd mellan knapparna */
-  margin-top: 1rem;
-  align-items: center;
-  flex-wrap: wrap; /* om du vill att de ska brytas på små skärmar */
-}
+    /* === RADIO KNAPPAR === */
+    .radio-group {
+      display: flex;
+      flex-direction: row; /* horisontell layout */
+      gap: 2rem;
+      margin-top: 1rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
 
-.radio-group label {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  cursor: pointer;
-  font-size: 0.9rem;
-  letter-spacing: 0.15rem;
-  text-transform: uppercase;
-}
+    .radio-group label {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      cursor: pointer;
+      font-size: 0.9rem;
+      letter-spacing: 0.15rem;
+      text-transform: uppercase;
+    }
 
-/* Själva radio-knappen */
-.radio-group input[type="radio"] {
-  appearance: none !important;
-  -webkit-appearance: none !important;
-  background-color: transparent !important;
-  border: 2px solid white !important;
-  width: 18px !important;
-  height: 18px !important;
-  border-radius: 50% !important;
-  position: relative !important;
-  cursor: pointer !important;
-  opacity: 1 !important;
-  z-index: auto !important;
-  display: inline-block !important;
-  margin-right: 10px;
-}
+    .radio-group input[type="radio"] {
+      appearance: none !important;
+      -webkit-appearance: none !important;
+      background-color: transparent !important;
+      border: 2px solid white !important;
+      width: 18px !important;
+      height: 18px !important;
+      border-radius: 50% !important;
+      position: relative !important;
+      cursor: pointer !important;
+      opacity: 1 !important;
+      z-index: auto !important;
+      display: inline-block !important;
+      margin-right: 10px;
+    }
 
+    .radio-group input[type="radio"]:checked::before {
+      content: "" !important;
+      position: absolute !important;
+      width: 10px !important;
+      height: 10px !important;
+      background-color: white !important;
+      border-radius: 50% !important;
+      top: 50% !important;
+      left: 50% !important;
+      transform: translate(-50%, -50%) !important;
+    }
 
-/* När den är iklickad: visa en vit prick i mitten */
-.radio-group input[type="radio"]:checked::before {
-  content: "" !important;
-  position: absolute !important;
-  width: 10px !important;
-  height: 10px !important;
-  background-color: white !important;
-  border-radius: 50% !important;
-  top: 50% !important;
-  left: 50% !important;
-  transform: translate(-50%, -50%) !important;
-}
-
-/* Fokuseffekt (t.ex. vid tab + enter) */
-.radio-group input[type="radio"]:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.4);
-}
-
+    .radio-group input[type="radio"]:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.4);
+    }
   </style>
 </head>
+
 <body class="is-preload">
+
+  <!-- ====== LOGGA I HÖRNET ====== -->
   <div id="cornerLogo" class="corner-logo">
     <img src="images/rentalogo.png" alt="Renta Logo" />
   </div>
 
+  <!-- ====== HUVUDSTRUKTUR (HEADER + MAIN + FOOTER) ====== -->
   <div id="wrapper">
+
+    <!-- ====== HEADER / NAVIGATION ====== -->
     <header id="header">
       <div class="logo">
         <span class="fas fa-graduation-cap"></span>
@@ -92,7 +98,10 @@
       </nav>
     </header>
 
+    <!-- ====== MAIN CONTENT (ALLA SEKTIONER) ====== -->
     <div id="main">
+
+      <!-- === INTRODUKTION === -->
       <article id="intro">
         <h2 class="major">Welcome to Renta</h2>
         <span class="image main"><img src="images/intro.jpg" alt="students in Korea" /></span>
@@ -100,6 +109,7 @@
         <p>Click "Contact" to get in touch, and we'll help you find a place that fits your needs.</p>
       </article>
 
+      <!-- === OM OSS === -->
       <article id="about">
         <h2 class="major">About Us</h2>
         <span class="image main"><img src="images/aboutus.jpg" alt="apartment buildings" /></span>
@@ -107,101 +117,101 @@
         <p>Renta is committed to simplifying the rental process by providing clear guidance, trustworthy resources, and localized support. Whether you're moving to Seoul, Incheon, or elsewhere in Korea, our mission is to help you feel secure, informed, and confident from day one.</p>
       </article>
 
+      <!-- === KONTAKTFORMULÄR === -->
       <article id="contact">
         <h2 class="major">Contact Us</h2>
         <p>Please complete the form below with accurate and detailed information to help us better understand your housing needs.</p>
 
+        <!-- === FORMULÄR SOM SKICKAS VIA USEBASIN === -->
         <form method="POST" action="https://usebasin.com/f/288426976765">
           <div class="fields">
+
+            <!-- === PERSONUPPGIFTER === -->
             <div class="field">
               <label for="first-name">First Name*</label>
               <input type="text" name="first-name" id="first-name" placeholder="e.g. Emma" required />
             </div>
-
             <div class="field">
               <label for="middle-name">Middle Name</label>
               <input type="text" name="middle-name" id="middle-name" placeholder="(optional)" />
             </div>
-
             <div class="field">
               <label for="last-name">Last Name*</label>
               <input type="text" name="last-name" id="last-name" placeholder="e.g. Kim" required />
             </div>
-
             <div class="field">
               <label for="email">E-mail Address*</label>
               <input type="email" name="email" id="email" placeholder="e.g. emma.kim@example.com" required />
             </div>
-
             <div class="field">
               <label for="birth-date">Birth Date*</label>
               <input type="date" name="birth-date" id="birth-date" required />
             </div>
-
             <div class="field">
               <label for="country">Country*</label>
               <input type="text" name="country" id="country" placeholder="e.g. Sweden" required />
             </div>
 
+            <!-- === DATUM FÖR HYRESPERIOD === -->
             <div class="field half">
               <label for="check-in">Check In Date*</label>
               <input type="date" name="check-in" id="check-in" required />
             </div>
-
             <div class="field half">
               <label for="check-out">Check Out Date*</label>
               <input type="date" name="check-out" id="check-out" required />
             </div>
 
+            <!-- === DEPOSITIONS- & HYRESINTERVALL === -->
             <div class="field half">
               <label for="deposit-min">Deposit Range (KRW)*</label>
               <input type="number" name="deposit-min" id="deposit-min" placeholder="Minimum" min="0" required />
             </div>
-
             <div class="field half">
               <label for="deposit-max">&nbsp;</label>
               <input type="number" name="deposit-max" id="deposit-max" placeholder="Maximum" min="0" required />
             </div>
-
             <div class="field half">
               <label for="rent-min">Rent Range (KRW)*</label>
               <input type="number" name="rent-min" id="rent-min" placeholder="Minimum" min="0" required />
             </div>
-
             <div class="field half">
               <label for="rent-max">&nbsp;</label>
               <input type="number" name="rent-max" id="rent-max" placeholder="Maximum" min="0" required />
             </div>
 
-           <div class="field">
-  <label>[Consent to Collect and Use Personal Information]</label>
-  <p style="font-size: 0.9em;">
-    • <strong>Information Collected:</strong> name, email address<br>
-    • <strong>Purpose:</strong> account registration, support, housing matching<br>
-    • <strong>Retention Period:</strong> until deletion or as required by law<br>
-    • <strong>Right to Refuse:</strong> You may refuse consent, but access may be limited.
-  </p>
+            <!-- === SAMTYCKE MED RADIO-KNAPPAR === -->
+            <div class="field">
+              <label>[Consent to Collect and Use Personal Information]</label>
+              <p style="font-size: 0.9em;">
+                • <strong>Information Collected:</strong> name, email address<br>
+                • <strong>Purpose:</strong> account registration, support, housing matching<br>
+                • <strong>Retention Period:</strong> until deletion or as required by law<br>
+                • <strong>Right to Refuse:</strong> You may refuse consent, but access may be limited.
+              </p>
 
- <div class="radio-group">
-  <label>
-    <input type="radio" name="consent" value="Agree" required />
-    Agree
-  </label>
-  <label>
-    <input type="radio" name="consent" value="Disagree" required />
-    Disagree
-  </label>
-</div>
-</div>
+              <div class="radio-group">
+                <label>
+                  <input type="radio" name="consent" value="Agree" required />
+                  Agree
+                </label>
+                <label>
+                  <input type="radio" name="consent" value="Disagree" required />
+                  Disagree
+                </label>
+              </div>
+            </div>
+
           </div>
 
+          <!-- === KNAPPAR FÖR SKICKA / ÅNGRA === -->
           <ul class="actions">
             <li><input type="submit" value="Register" class="primary" /></li>
             <li><input type="reset" value="Cancel" /></li>
           </ul>
-
         </form>
 
+        <!-- === SOCIALA IKONER === -->
         <ul class="icons">
           <li><a href="https://www.instagram.com/DITT_ANVÄNDARNAMN" target="_blank" class="insta-icon"><img src="images/instagram.png" alt="Instagram" /></a></li>
           <li><a href="https://open.kakao.com/o/YOURLINK" target="_blank" class="kakao-icon"><img src="images/kakao.png" alt="KakaoTalk" /></a></li>
@@ -210,18 +220,23 @@
       </article>
     </div>
 
+    <!-- ====== FOOTER ====== -->
     <footer id="footer">
       <p class="copyright">© 2025 Renta. Design adapted from <a href="https://html5up.net">HTML5 UP</a>.</p>
     </footer>
   </div>
 
+  <!-- ====== BAKGRUNDSANIMATION ====== -->
   <div id="bg"></div>
 
+  <!-- ====== JAVASCRIPT FÖR FUNKTIONER & ANIMATIONER ====== -->
   <script src="assets/js/jquery.min.js"></script>
   <script src="assets/js/browser.min.js"></script>
   <script src="assets/js/breakpoints.min.js"></script>
   <script src="assets/js/util.js"></script>
   <script src="assets/js/main.js"></script>
+
+  <!-- ====== LOGGANS SYNLIGHET (VISAS ENDAST NÄR INGEN ARTIKEL ÄR ÖPPEN) ====== -->
   <script>
       const logo = document.getElementById("cornerLogo");
       function updateLogoVisibility() {
