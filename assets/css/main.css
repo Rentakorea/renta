@@ -1800,3 +1800,41 @@ input[type="radio"] {
 		font-size: 0.9rem;
 		margin-left: 4px;
 	}
+.image-row {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 2rem;
+}
+
+.service-box {
+	flex: 1;
+	min-width: 250px;
+	text-align: center;
+}
+
+.review-grid {
+	display: flex;
+	gap: 2rem;
+	flex-wrap: wrap;
+}
+
+.testimonial {
+	border: 1px solid white;
+	padding: 1rem;
+	flex: 1;
+	min-width: 250px;
+}
+
+.person {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	margin-top: 1rem;
+}
+
+	.person img {
+		border-radius: 50%;
+		width: 50px;
+		height: 50px;
+	}
